@@ -1,11 +1,26 @@
 package org.booking.entity;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.List;
 
-public class Hotel {
+public class Hotel implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
     private String hotelLocation;
     private List<Client> clients;
     private List<Room> rooms;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    private String status;
 
     public String getHotelLocation() {
         return hotelLocation;

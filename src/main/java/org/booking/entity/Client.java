@@ -1,12 +1,17 @@
 package org.booking.entity;
 
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Client {
+public class Client implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = 1L;
     private Integer clientId;
     private String name;
-    private List<Room> roomList;
+    private List<Room> roomList = new ArrayList<>();
 
     public void setClientId(int  clientId) {
         this.clientId = clientId;
