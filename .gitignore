@@ -36,10 +36,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/.idea/.gitignore
-/.idea/encodings.xml
-/.idea/misc.xml
-/.idea/uiDesigner.xml
-/.idea/vcs.xml
-/.idea/checkstyle-idea.xml
-.idea/codeStyles/codeStyleConfig.xml
+/.idea/**
+

@@ -1,28 +1,35 @@
 package org.booking.servlet;
 
+
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.booking.service.HotelService;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+@WebServlet("/insertRoom")
 public class InsertRoomNumbers extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-String name = request.getParameter("name");
-response.setContentType("text/html");
-PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html lang=\"en\">");
-        out.println("<head><title>Response</title></head>");
-        out.println("<body>");
-        out.println("<h1>Hello, " + name + "!</h1>");
-        out.println("</body>");
-        out.println("</html>");
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String num1Str = req.getParameter("num1");
+        String num2Str = req.getParameter("num2");
+
+        int sum = 0;
+        try{
+            int num1 = Integer.parseInt(num1Str);
+            int num2 = Integer.parseInt(num2Str);
+            sum = num1 + num2;
+        }
+        catch (NumberFormatException e){
+            return;
+        }
+
+        resp.setContentType("text/plain");
+        resp.getWriter().println(sum);
     }
 
 }
