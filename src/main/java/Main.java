@@ -25,8 +25,8 @@ public class Main {
 
         // Interface for Administrator
         String adminPrompt = """
-                ----------- Interface for Administrator -----------
-                Enter total rooms:
+                ----------- interface for administrator -----------
+                enter total rooms:
                 """;
         System.out.print(adminPrompt);
         int totalRooms = scanner.nextInt();
