@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" name="BookingApp-Tomcat">
-    <output-path>$PROJECT_DIR$/../../Tomcat/apache-tomcat-11.0.1</output-path>
-    <root id="root" />
-  </artifact>
-</component>
