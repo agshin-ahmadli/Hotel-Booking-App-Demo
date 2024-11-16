@@ -13,7 +13,7 @@
   <!-- Map the servlet to the URL pattern -->
   <servlet-mapping>
     <servlet-name>Room Insertion</servlet-name>
-    <url-pattern>/insert</url-pattern> <!-- This should match the form action -->
+    <url-pattern>/insert</url-pattern>
   </servlet-mapping>
 
 </web-app>
