@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Client implements Serializable {
+public class Client  {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+
+
     private Integer clientId;
     private String name;
     private List<Room> roomList = new ArrayList<>();

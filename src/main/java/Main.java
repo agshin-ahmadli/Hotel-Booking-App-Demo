@@ -1,5 +1,7 @@
 import org.booking.config.ConfigUtil;
 import org.booking.dataformat.SerializationUtil;
+import org.booking.repository.RoomRepository;
+import org.booking.repository.RoomRepositoryImpl;
 import org.booking.service.HotelService;
 import org.booking.service.HotelServiceImpl;
 import org.booking.entity.Client;
@@ -20,7 +22,8 @@ public class Main {
         ClientRepository clientRepository = new ClientRepositoryImpl();
         RoomVerificationService roomVerificationService = new RoomVerificationService();
         ConfigUtil configUtil = new ConfigUtil();
-        HotelService service = new HotelServiceImpl(configUtil, clientRepository, roomVerificationService);
+
+        HotelService service = new HotelServiceImpl( configUtil, clientRepository, roomVerificationService);
 
 
         // Interface for Administrator

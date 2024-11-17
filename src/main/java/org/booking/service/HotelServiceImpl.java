@@ -5,6 +5,7 @@ import org.booking.entity.Client;
 import org.booking.entity.Hotel;
 import org.booking.entity.Room;
 import org.booking.repository.ClientRepository;
+import org.booking.repository.RoomRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,13 +16,15 @@ import static org.booking.entity.Status.RESERVED;
 
 public class HotelServiceImpl implements HotelService {
 
+
     private final Scanner scanner = new Scanner(System.in);
     private final ConfigUtil configUtil;
     private final ClientRepository clientRepository;
     private final RoomVerificationService roomVerificationService;
 
-    public HotelServiceImpl(ConfigUtil configUtil, ClientRepository clientRepository,
+    public HotelServiceImpl( ConfigUtil configUtil, ClientRepository clientRepository,
                             RoomVerificationService roomVerificationService) {
+
         this.configUtil = configUtil;
         this.clientRepository = clientRepository;
         this.roomVerificationService = roomVerificationService;
@@ -36,6 +39,8 @@ public class HotelServiceImpl implements HotelService {
         }
         return clientRepository.saveClient(new Client(clientId, clientName, new ArrayList<>()));
     }
+
+
 
 
 

@@ -1,28 +1,65 @@
 package org.booking.servlet;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.booking.service.HotelService;
+import org.booking.entity.Room;
+import org.booking.entity.Status;
+import org.booking.repository.RoomRepository;
+import org.booking.repository.RoomRepositoryImpl;
+import java.io.*;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+
+@WebServlet("/InsertRoom")
 
 public class InsertRoomNumbers extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-String name = request.getParameter("name");
-response.setContentType("text/html");
-PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html lang=\"en\">");
-        out.println("<head><title>Response</title></head>");
-        out.println("<body>");
-        out.println("<h1>Hello, " + name + "!</h1>");
-        out.println("</body>");
-        out.println("</html>");
+    RoomRepository repository = new RoomRepositoryImpl();
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String roomNum = request.getParameter("roomId");
+        String price = request.getParameter("roomPrice");
+        String status = request.getParameter("roomStatus");
+
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        try {
+            if (roomNum == null || price == null || status == null) {
+                throw new ServletException("All parameters are required");
+            }
+
+
+            int roomNumber = Integer.parseInt(roomNum);
+            double roomPrice = Double.parseDouble(price);
+            Status roomStatus = Status.valueOf(status);
+
+
+            Room room = new Room(roomNumber, roomPrice, roomStatus);
+            repository.save(room);
+
+
+
+            out.println("<html><body>");
+            out.println("<h1>Room Insertion Success!</h1>");
+            out.println("<p>Room ID: " + roomNumber + "</p>");
+            out.println("<p>Room Price: " + roomPrice + "</p>");
+            out.println("<p>Room Status: " + roomStatus + "</p>");
+            out.println("</body></html>");
+
+        } catch (Exception e) {
+
+            out.println("<html><body>");
+            out.println("<h1>Error: Unable to Insert Room</h1>");
+            out.println("<p>" + e.getMessage() + "</p>");
+            out.println("<a href='roomForm.html'>Go Back</a>");
+            out.println("</body></html>");
+        }
     }
+
 
 }

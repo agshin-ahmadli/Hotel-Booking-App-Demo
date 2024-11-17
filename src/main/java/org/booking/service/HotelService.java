@@ -14,5 +14,6 @@ public interface HotelService {
     void cancelExistingBooking(List<Room> rooms, List<Client> clients, int roomId, int clientId);
     List<Client>findAllClients();
     void changeHotelStatus(Hotel hotel, String newStatus);
+
 }
 

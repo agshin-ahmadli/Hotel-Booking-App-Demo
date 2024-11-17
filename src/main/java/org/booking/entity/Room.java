@@ -3,10 +3,9 @@ package org.booking.entity;
 import java.io.Serial;
 import java.io.Serializable;
 
-public class Room implements Serializable {
+public class Room  {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+
     private int roomId;
     private double roomPrice;
     private Status status;

@@ -4,10 +4,9 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
-public class Hotel implements Serializable {
+public class Hotel  {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+
     private String hotelLocation;
     private List<Client> clients;
     private List<Room> rooms;
