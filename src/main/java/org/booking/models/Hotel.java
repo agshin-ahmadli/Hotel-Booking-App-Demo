@@ -1,16 +1,23 @@
-package org.booking.entity;
+package org.booking.models;
 
-import java.io.Serial;
-import java.io.Serializable;
+import jakarta.persistence.*;
+
 import java.util.List;
 
-public class Hotel implements Serializable {
+@Entity
+@Table(name = "hotel")
+public class Hotel  {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String hotelLocation;
-    private List<Client> clients;
+
+    @OneToMany(mappedBy = "hotel", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Room> rooms;
+
+    @OneToMany(mappedBy = "hotel")
+    private List<Client>clients;
 
     public String getStatus() {
         return status;
@@ -46,9 +53,8 @@ public class Hotel implements Serializable {
         this.rooms = rooms;
     }
 
-    public Hotel(String hotelLocation, List<Client> clients, List<Room> rooms) {
+    public Hotel(String hotelLocation, List<Room> rooms) {
         this.hotelLocation = hotelLocation;
-        this.clients = clients;
         this.rooms = rooms;
     }
 

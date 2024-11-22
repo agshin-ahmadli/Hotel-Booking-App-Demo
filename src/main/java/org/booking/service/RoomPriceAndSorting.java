@@ -1,16 +1,8 @@
 package org.booking.service;
 
-import org.booking.entity.Room;
-import org.booking.entity.Status;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
-
 public class RoomPriceAndSorting {
 
-    private final Scanner scanner;
+/*    private final Scanner scanner;
 
     public RoomPriceAndSorting(Scanner scanner) {
         this.scanner = scanner;
@@ -33,5 +25,5 @@ public class RoomPriceAndSorting {
 
     private void sortRoomsByPrice(List<Room> rooms) {
         rooms.sort(Comparator.comparingDouble(Room::getRoomPrice));
-    }
+    }*/
 }

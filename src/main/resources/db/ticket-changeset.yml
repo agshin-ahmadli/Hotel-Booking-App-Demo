@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: axmedlinsky
+      changes:
+        - createTable:
+            tableName: ticket
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: check_in_date
+                  type: DATE
+              - column:
+                  name: check_out_date
+                  type: DATE
+              - column:
+                  name: price
+                  type: DECIMAL(10,2)
+              - column:
+                  name: client_id
+                  type: BIGINT
+
+  - changeSet:
+      id: 5
+      author: axmedlinsky
+      changes:
+        - createTable:
+            tableName: ticket_room
+            columns:
+              - column:
+                  name: ticket_id
+                  type: BIGINT
+              - column:
+                  name: room_id
+                  type: BIGINT

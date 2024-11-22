@@ -1,13 +1,13 @@
 package org.booking.service;
 
-import org.booking.entity.Client;
-import org.booking.entity.Room;
-
-import java.util.List;
+import org.booking.models.Room;
 
 public class RoomVerificationService {
 
-    public Room verifyRoomById(List<Room> rooms, int roomId) {
+
+
+
+/*    public Room verifyRoomById(List<Room> rooms, int roomId) {
         return rooms.stream()
                 .filter(room -> room.getRoomId() == roomId)
                 .findFirst()
@@ -19,5 +19,5 @@ public class RoomVerificationService {
                 .filter(client -> client.getClientId() == clientId)
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Client with Id " + clientId + " not found"));
-    }
+    }*/
 }

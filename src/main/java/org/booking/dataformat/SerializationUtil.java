@@ -1,6 +1,6 @@
 package org.booking.dataformat;
 
-import org.booking.entity.Hotel;
+import org.booking.models.Hotel;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

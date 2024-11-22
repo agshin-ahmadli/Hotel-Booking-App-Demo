@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: client-changeset.yml
+  - include:
+      file: hotel-changeset.yml
+  - include:
+      file: room-changeset.yml
+  - include:
+      file: ticket-changeset.yml
+  - include:
+      file: relationships.yml

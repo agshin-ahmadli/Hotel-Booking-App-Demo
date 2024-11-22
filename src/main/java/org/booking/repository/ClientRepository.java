@@ -1,9 +1,13 @@
 package org.booking.repository;
-import org.booking.entity.Client;
+import org.booking.models.Client;
 import java.util.List;
+import java.util.Optional;
 
 public interface ClientRepository {
 
-    Client saveClient(Client client);
+    void saveClient(Client client);
+
     List<Client> clientList();
+
+    Optional<Client> findById(Long clientId);
 }
