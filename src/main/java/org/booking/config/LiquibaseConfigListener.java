@@ -39,7 +39,7 @@ public class LiquibaseConfigListener implements ServletContextListener {
                     Database database = DatabaseFactory.getInstance()
                             .findCorrectDatabaseImplementation(new JdbcConnection(connection));
 
-                    String changeLogFile = "db/changelog-master.yaml";
+                    String changeLogFile = "db/merged-changeset.yml";
 
                     Liquibase liquibase = new Liquibase(changeLogFile, new ClassLoaderResourceAccessor(), database);
                     liquibase.update(new Contexts(), new LabelExpression());

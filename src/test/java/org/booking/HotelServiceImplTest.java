@@ -1,15 +1,15 @@
 package org.booking;
 
-import static org.booking.entity.Status.AVAILABLE;
-import static org.booking.entity.Status.RESERVED;
+import static org.booking.models.Status.AVAILABLE;
+import static org.booking.models.Status.RESERVED;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 import org.booking.config.ConfigUtil;
-import org.booking.entity.Client;
-import org.booking.entity.Hotel;
-import org.booking.entity.Room;
-import org.booking.entity.Status;
+import org.booking.models.Client;
+import org.booking.models.Hotel;
+import org.booking.models.Room;
+import org.booking.models.Status;
 import org.booking.repository.ClientRepository;
 import org.booking.service.HotelServiceImpl;
 import org.booking.service.PaginationHandler;

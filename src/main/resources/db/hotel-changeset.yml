@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: axmedlinsky
+      changes:
+        - createTable:
+            tableName: hotel
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement:
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+              - column:
+                  name: hotelLocation
+                  type: VARCHAR
+                  constraints:
+                    nullable: false

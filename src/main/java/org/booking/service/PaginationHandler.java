@@ -1,12 +1,8 @@
 package org.booking.service;
-import org.booking.entity.Room;
-
-import java.util.List;
-import java.util.Scanner;
 
 public class PaginationHandler {
 
-    private final Scanner scanner;
+/*    private final Scanner scanner;
     public PaginationHandler(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -62,6 +58,6 @@ public class PaginationHandler {
             return false;
         }
         return action.equalsIgnoreCase("p");
-    }
+    }*/
 }
 
